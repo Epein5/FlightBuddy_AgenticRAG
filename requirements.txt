@@ -1,0 +1,14 @@
+requests
+# beautifulsoup4
+langgraph
+langchain
+langchain_community
+langchainhub
+ipykernel
+langchain_groq
+langchain-google-genai
+langchain_huggingface
+tiktoken
+chromadb
+wikipedia
+sentence-transformers

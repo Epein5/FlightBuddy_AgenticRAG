@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 url = "https://www.tiairport.com.np/en-faq"
 
 # Output file name
-output_file = "scraped_faqs.txt"
+output_file = "DB/scraped_faqs.txt"
 
 # Send a GET request to the URL
 response = requests.get(url)
