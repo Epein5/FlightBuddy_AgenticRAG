@@ -14,6 +14,99 @@ The system consists of three main components that work together to provide compr
 2. **RAG System**: Handles queries about Tribhuvan International Airport using a document retrieval system
 3. **SQL Agent**: Processes flight booking queries using a SQLite database
 
+[Previous sections remain the same until System Architecture]
+
+## System Architecture
+
+The system consists of three main components that work together to provide comprehensive flight-related information:
+
+1. **Query Router**: An AI assistant that categorizes incoming queries into three types:
+   - RAG-based queries (Airport rules, regulations, and services)
+   - SQL-based queries (Flight booking and scheduling)
+   - General-purpose queries (Other aviation-related questions)
+
+2. **RAG System**: Handles queries about Tribhuvan International Airport using a document retrieval system
+3. **SQL Agent**: Processes flight booking queries using a SQLite database
+
+### System Architecture Diagram
+
+```mermaid
+graph TB
+    subgraph User_Interface
+        A[User Query]
+    end
+
+    subgraph Query_Router
+        B[AI Assistant]
+        B1{Query Type}
+    end
+
+    subgraph RAG_System
+        C1[Document Store\nChromaDB]
+        C2[BGE Embeddings]
+        C3[Context Compression]
+        C4[RAG Processing]
+    end
+
+    subgraph SQL_System
+        D1[SQLite Database]
+        D2[SQL Query Generator]
+        D3[Data Processing\nPandas]
+    end
+
+    subgraph LLM_System
+        E1[Gemini Pro LLM]
+        E2[General Query\nProcessing]
+    end
+
+    %% Main Flow
+    A --> B
+    B --> B1
+    
+    %% RAG Flow
+    B1 -->|use_rag| C1
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+    C4 --> E1
+    
+    %% SQL Flow
+    B1 -->|use_sql| D2
+    D2 --> D1
+    D1 --> D3
+    D3 --> E1
+    
+    %% General Query Flow
+    B1 -->|use_nth| E2
+    E2 --> E1
+    
+    %% Response Flow
+    E1 -->|Formatted Response| A
+
+    %% Styling
+    classDef primary fill:#2196F3,stroke:#1976D2,stroke-width:2px,color:white
+    classDef secondary fill:#4CAF50,stroke:#388E3C,stroke-width:2px,color:white
+    classDef tertiary fill:#FF9800,stroke:#F57C00,stroke-width:2px,color:white
+    classDef router fill:#9C27B0,stroke:#7B1FA2,stroke-width:2px,color:white
+    
+    class A,E1 primary
+    class B,B1 router
+    class C1,C2,C3,C4 secondary
+    class D1,D2,D3 tertiary
+    class E2 primary
+```
+
+The diagram above illustrates the complete flow of our system:
+
+1. User queries enter through the interface layer
+2. The Query Router (AI Assistant) analyzes and routes queries to the appropriate subsystem
+3. Each subsystem (RAG, SQL, or General) processes the query using specialized components:
+   - RAG System: Uses document store, embeddings, and context compression
+   - SQL System: Generates queries, accesses database, and processes data
+   - General System: Handles direct LLM processing
+4. All paths converge at the Gemini Pro LLM for final response generation
+5. Formatted responses are returned to the user
+
 ## Technologies Used
 
 - Python 3.12.3
