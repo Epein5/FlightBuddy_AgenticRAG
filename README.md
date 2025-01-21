@@ -14,20 +14,6 @@ The system consists of three main components that work together to provide compr
 2. **RAG System**: Handles queries about Tribhuvan International Airport using a document retrieval system
 3. **SQL Agent**: Processes flight booking queries using a SQLite database
 
-[Previous sections remain the same until System Architecture]
-
-## System Architecture
-
-The system consists of three main components that work together to provide comprehensive flight-related information:
-
-1. **Query Router**: An AI assistant that categorizes incoming queries into three types:
-   - RAG-based queries (Airport rules, regulations, and services)
-   - SQL-based queries (Flight booking and scheduling)
-   - General-purpose queries (Other aviation-related questions)
-
-2. **RAG System**: Handles queries about Tribhuvan International Airport using a document retrieval system
-3. **SQL Agent**: Processes flight booking queries using a SQLite database
-
 ### System Architecture Diagram
 
 ```mermaid
@@ -120,6 +106,9 @@ The diagram above illustrates the complete flow of our system:
 ## Setup and Installation
 
 1. Clone the repository
+```bash
+git clone https://github.com/Epein5/FlightBuddy_AgenticRAG.git
+```
 2. Create a virtual environment:
 ```bash
 python -m venv venv
@@ -136,6 +125,13 @@ pip install -r requirements.txt
 # Create a .env file with:
 GEMINI_API_KEY=your_api_key_here
 ```
+5. Run the Streamlit Applicaiton:
+```bash
+streamlit run app.py
+```
+## Demo Video
+https://github.com/user-attachments/assets/40cea210-be42-4b42-ba6b-771c33534228
+
 
 ## System Components
 
@@ -174,18 +170,20 @@ The flight database contains the following columns:
 - Type (Domestic/International)
 - Death Rate (%)
 
-## Usage Example
+## Usage Example in Notebooks/agentic.ipynb
 
 ```python
-user_query = "Give me the list of Airlines flying from Kathmandu to New Delhi"
+user_query = "I need to book a ticket form kathmandu. Give me the list of Airlines with their  flying from Kathmandu"
+user_query = "I want to die in a plane crash which airline should i choose and buy a ticket ."
+user_query = "WHat items am i not allowed to carry in my luggage?"
 decision = ai_assistant(ai_assistant_prompt, user_query, llm)
 
 if decision == "use_rag":
     print(rag_assistant(rag_prompt, user_query, llm))
 elif decision == "use_sql":
-    print(sql_items_retrieval(sql_agent_prompt, user_query, llm, sql_prompt))
+    print(sql_items_retrieval(sql_agent_prompt, user_query, llm, sql_prompt, sql_recheck_prompt))
 else:
-    print(normal_query(user_query, llm))
+    print(normal_query(user_query, llm
 ```
 
 ## Features
