@@ -1,0 +1,62 @@
+Airline Name,From,To,Estimated Time of Take Off,Estimated Time of Arrival,Type,Death Rate (%)
+Nepal Airlines,Kathmandu,New Delhi,08:00,09:30,International,0.01
+Buddha Air,Kathmandu,Pokhara,06:30,07:15,Domestic,0.005
+Yeti Airlines,Kathmandu,Lukla,07:00,07:30,Domestic,0.02
+Shree Airlines,Kathmandu,Bhadrapur,09:00,10:00,Domestic,0.015
+Summit Air,Kathmandu,Jomsom,06:45,07:30,Domestic,0.03
+Nepal Airlines,Kathmandu,Bangkok,10:00,13:30,International,0.01
+Buddha Air,Kathmandu,Bhairahawa,08:30,09:20,Domestic,0.005
+Yeti Airlines,Kathmandu,Janakpur,09:15,10:00,Domestic,0.02
+Shree Airlines,Kathmandu,Biratnagar,11:00,11:45,Domestic,0.015
+Summit Air,Kathmandu,Simikot,12:00,13:00,Domestic,0.03
+Nepal Airlines,Kathmandu,Kuala Lumpur,23:00,04:30,International,0.01
+Buddha Air,Pokhara,Kathmandu,10:30,11:15,Domestic,0.005
+Yeti Airlines,Lukla,Kathmandu,08:00,08:30,Domestic,0.02
+Shree Airlines,Kathmandu,Dhangadhi,13:30,15:00,Domestic,0.015
+Summit Air,Jomsom,Kathmandu,14:00,14:45,Domestic,0.03
+Nepal Airlines,Kathmandu,Doha,18:00,22:30,International,0.01
+Buddha Air,Kathmandu,Simara,07:30,08:00,Domestic,0.005
+Yeti Airlines,Kathmandu,Bharatpur,08:15,08:45,Domestic,0.02
+Shree Airlines,Kathmandu,Nepalgunj,10:00,11:00,Domestic,0.015
+Summit Air,Simikot,Kathmandu,11:30,12:30,Domestic,0.03
+Nepal Airlines,Kathmandu,Hong Kong,20:00,02:00,International,0.01
+Buddha Air,Kathmandu,Tumlingtar,06:00,06:45,Domestic,0.005
+Yeti Airlines,Kathmandu,Surkhet,07:00,08:00,Domestic,0.02
+Shree Airlines,Kathmandu,Rajbiraj,09:30,10:30,Domestic,0.015
+Summit Air,Kathmandu,Rukum,12:30,13:30,Domestic,0.03
+Nepal Airlines,Kathmandu,Singapore,22:00,04:30,International,0.01
+Buddha Air,Kathmandu,Meghauli,07:00,07:30,Domestic,0.005
+Yeti Airlines,Kathmandu,Taplejung,08:45,09:45,Domestic,0.02
+Shree Airlines,Kathmandu,Gorkha,10:45,11:15,Domestic,0.015
+Summit Air,Kathmandu,Dolpa,12:45,13:30,Domestic,0.03
+Summit Air,Kathmandu,Rukum,12:30,13:30,Domestic,0.03
+Nepal Airlines,Kathmandu,Singapore,22:00,04:30,International,0.01
+Buddha Air,Kathmandu,Meghauli,07:00,07:30,Domestic,0.005
+Yeti Airlines,Kathmandu,Taplejung,08:45,09:45,Domestic,0.02
+Shree Airlines,Kathmandu,Gorkha,10:45,11:15,Domestic,0.015
+Summit Air,Kathmandu,Dolpa,12:45,13:30,Domestic,0.03
+Nepal Airlines,Pokhara,Kathmandu,06:30,07:15,Domestic,0.01
+Buddha Air,Chitwan,Kathmandu,08:00,08:45,Domestic,0.005
+Yeti Airlines,Kathmandu,Pokhara,09:00,09:45,Domestic,0.02
+Shree Airlines,Pokhara,Chitwan,10:00,10:45,Domestic,0.015
+Summit Air,Pokhara,Lukla,11:00,11:45,Domestic,0.03
+Nepal Airlines,Pokhara,Jomsom,06:15,07:00,Domestic,0.01
+Buddha Air,Chitwan,Lumbini,07:45,08:30,Domestic,0.005
+Yeti Airlines,Pokhara,Dolpa,08:30,09:15,Domestic,0.02
+Shree Airlines,Chitwan,Bhairahawa,09:15,10:00,Domestic,0.015
+Summit Air,Pokhara,Simara,10:30,11:15,Domestic,0.03
+Nepal Airlines,Kathmandu,Bharatpur,12:30,13:15,Domestic,0.01
+Buddha Air,Chitwan,Dhangadhi,13:15,15:00,Domestic,0.005
+Yeti Airlines,Pokhara,Surkhet,11:45,12:45,Domestic,0.02
+Shree Airlines,Chitwan,Nepalgunj,13:30,15:00,Domestic,0.015
+Summit Air,Chitwan,Rajbiraj,14:15,15:30,Domestic,0.03
+Nepal Airlines,Pokhara,Kuala Lumpur,16:00,22:30,International,0.01
+Buddha Air,Pokhara,Janakpur,07:00,07:45,Domestic,0.005
+Yeti Airlines,Chitwan,Simikot,07:30,08:15,Domestic,0.02
+Shree Airlines,Pokhara,Bhadrapur,08:30,09:45,Domestic,0.015
+Summit Air,Chitwan,Jomsom,10:00,10:45,Domestic,0.03
+Nepal Airlines,Pokhara,Doha,23:00,03:30,International,0.01
+Buddha Air,Chitwan,Biratnagar,08:45,09:30,Domestic,0.005
+Yeti Airlines,Kathmandu,Lumbini,09:15,10:00,Domestic,0.02
+Shree Airlines,Pokhara,Bharatpur,10:45,11:30,Domestic,0.015
+Summit Air,Pokhara,Tumlingtar,12:15,13:00,Domestic,0.03

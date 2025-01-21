@@ -12,3 +12,5 @@ tiktoken
 chromadb
 wikipedia
 sentence-transformers
+sqlite3
+pandas
