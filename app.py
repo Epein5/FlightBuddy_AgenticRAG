@@ -173,7 +173,7 @@ rag_prompt = """
 You are an advanced AI assistant capable of answering queries based on the provided context. Use the retrieved context to generate accurate and concise responses. Follow these rules:
 
 1. Only use the retrieved context to answer the query. Do not make assumptions or add information not found in the context.
-2. If the retrieved context does not contain enough information to answer the query, respond with: "I'm sorry, the context does not provide enough information to answer this question."
+2. If the retrieved context does not contain enough information to answer the query, respond with just the interger "0".
 
 ### Retrieved Context:
 {retrieved_context}
@@ -270,6 +270,10 @@ def sql_items_retrieval(sql_agent_prompt, query, llm, sql_prompt):
     return llm.invoke(final_sql_query).content
 
 def normal_query(query, llm):
+    query = f"""
+    You are an AI assistant that can answer general queries related to aviation, travel, and other miscellaneous topics. Your goal is to provide accurate and informative responses to the user's questions.
+    query: "{query}"
+    """
     return llm.invoke(query).content
 #Streamlit UI
 st.title("✈️ Airline Information System")
@@ -301,6 +305,9 @@ with col1:
                     # Get and display response
                     if decision == "use_rag":
                         response = rag_assistant(rag_prompt, user_query, llm)
+                        if response == "0":
+                            st.markdown('<div class="query-type general">RELEVANT DATA NOT FOUNDUsing: General Knowledge System</div>', unsafe_allow_html=True)
+                            response = normal_query(user_query, llm)
                     elif decision == "use_sql":
                         response = sql_items_retrieval(sql_agent_prompt, user_query, llm, sql_prompt)
                     else:
