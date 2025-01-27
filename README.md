@@ -32,6 +32,7 @@ graph TB
         C2[BGE Embeddings]
         C3[Context Compression]
         C4[RAG Processing]
+        C5{Context Found?}
     end
 
     subgraph SQL_System
@@ -54,7 +55,9 @@ graph TB
     C1 --> C2
     C2 --> C3
     C3 --> C4
-    C4 --> E1
+    C4 --> C5
+    C5 -->|Yes| E1
+    C5 -->|No| E2
     
     %% SQL Flow
     B1 -->|use_sql| D2
@@ -74,12 +77,14 @@ graph TB
     classDef secondary fill:#4CAF50,stroke:#388E3C,stroke-width:2px,color:white
     classDef tertiary fill:#FF9800,stroke:#F57C00,stroke-width:2px,color:white
     classDef router fill:#9C27B0,stroke:#7B1FA2,stroke-width:2px,color:white
+    classDef decision fill:#FFEB3B,stroke:#FBC02D,stroke-width:2px,color:black
     
     class A,E1 primary
     class B,B1 router
     class C1,C2,C3,C4 secondary
     class D1,D2,D3 tertiary
     class E2 primary
+    class C5 decision
 ```
 
 The diagram above illustrates the complete flow of our system:
@@ -152,6 +157,7 @@ Implements a retrieval-augmented generation system using:
 - ChromaDB as the vector store
 - BGE embeddings for document encoding
 - Context compression for improved relevance
+- Routes to general query if context is not found
 
 ### 3. SQL Agent
 Handles flight booking queries with:
