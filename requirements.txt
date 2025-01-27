@@ -14,3 +14,4 @@ wikipedia
 sentence-transformers
 sqlite3
 pandas
+streamlit
